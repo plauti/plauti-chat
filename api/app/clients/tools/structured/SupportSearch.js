@@ -43,7 +43,7 @@ class PlautiSupportSearch extends Tool {
       });
 
       if (!response.ok) {
-        throw new Error(`Error fetching Plauti Support data: ${response.status}`);
+        throw new Error(`Error fetching Plauti Support data: ${response.status} + ${this.baseUrl} + ${this.apiKey}`);
       }
 
       const data = await response.json();

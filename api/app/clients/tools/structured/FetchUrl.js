@@ -45,7 +45,7 @@ class FetchUrl extends Tool {
 		try {
 			// Validate URL
 			if (!this.isValidUrl(url)) {
-				throw new Error("Invalid or unsafe URL string");
+				throw new Error("Invalid or unsafe URL string -- " + console.log(JSON.stringify(url)));
 			}
 			// Use fetch (Node 18+)
 			const response = await fetch(url);
@@ -63,7 +63,7 @@ class FetchUrl extends Tool {
 
 			const url = new URL(urlString);
 			
-			console.log(JSON.stringify(url));
+			
 			
 
 			if (url.protocol !== 'https:') {
