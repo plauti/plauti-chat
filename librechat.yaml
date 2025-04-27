@@ -6,6 +6,7 @@ cache: true
 
 includedTools:
   - google
+  - fetchurl
 
 interface:
   customWelcome: "Welcome to Plauti Chat (beta)!"
