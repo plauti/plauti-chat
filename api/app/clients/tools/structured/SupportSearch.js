@@ -33,13 +33,11 @@ class PlautiSupportSearch extends Tool {
       }
 
       // Fetch data from the Plauti Support knowledge base
-      const response = await fetch(`${this.baseUrl}/api/articles/search`, {
-        method: 'POST',
+      const response = await fetch(`${this.baseUrl}/api/v3/search?query=${encodeURIComponent(query)}`, {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Basic ${Buffer.from(this.apiKey + ':').toString('base64')}`, // Basic Auth
+          'api_key': this.apiKey,
         },
-        body: JSON.stringify({ query }),
       });
 
       if (!response.ok) {

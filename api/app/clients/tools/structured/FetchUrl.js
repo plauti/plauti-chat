@@ -41,11 +41,11 @@ class FetchUrl extends Tool {
 	/**
 	 * @param {string} url (can add input validation here)
 	 */
-	async _call(url) {
+	async _call({url}) {
 		try {
 			// Validate URL
 			if (!this.isValidUrl(url)) {
-				throw new Error("Invalid or unsafe URL string -- " + console.log(JSON.stringify(url)));
+				throw new Error("Invalid or unsafe URL string -- " + url);
 			}
 			// Use fetch (Node 18+)
 			const response = await fetch(url);
