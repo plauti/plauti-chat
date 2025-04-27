@@ -60,8 +60,13 @@ class FetchUrl extends Tool {
 	}
 	isValidUrl(urlString) {
 		try {
+
 			const url = new URL(urlString);
-			if (url.protocol !== "https:") {
+			
+			console.log(JSON.stringify(url));
+			
+
+			if (url.protocol !== 'https:') {
 				return false;
 			}
 			const hostname = url.hostname;

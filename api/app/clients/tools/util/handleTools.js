@@ -20,6 +20,7 @@ const {
   TavilySearchResults,
   createOpenAIImageTools,
   FetchUrl,
+  PlautiSupportSearch,
 } = require('../');
 const { primeFiles: primeCodeFiles } = require('~/server/services/Files/Code/process');
 const { createFileSearchTool, primeFiles: primeSearchFiles } = require('./fileSearch');
@@ -151,6 +152,7 @@ const loadTools = async ({
     calculator: Calculator,
     google: GoogleSearchAPI,
     fetchurl: FetchUrl,
+    'plauti_support_search': PlautiSupportSearch,
     open_weather: OpenWeather,
     wolfram: StructuredWolfram,
     'stable-diffusion': StructuredSD,

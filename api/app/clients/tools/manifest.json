@@ -201,5 +201,23 @@
     "authConfig": [
       
     ]
+  },
+  {
+    "name": "Plauti Support Search",
+    "pluginKey": "plauti_support_search",
+    "description": "Use Plauti Support Kowledgebase to answer questions.",
+    "icon": "https://i.imgur.com/SMmVkNB.png",
+    "authConfig": [
+      {
+        "authField": "HELPJUICE_URL",
+        "label": "HelpJuice URL",
+        "description": "Your Plauti Support knowledge base URL"
+      },
+      {
+        "authField": "HELPJUICE_KEY",
+        "label": "HelpJuice Key",
+        "description": "Your API key or login credentials"
+      }
+    ]
   }
 ]
