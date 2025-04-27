@@ -1,0 +1,67 @@
+# Configuration version (required)
+version: 1.2.4
+
+# Cache settings: Set to true to enable caching
+cache: true
+
+includedTools:
+  - google
+
+interface:
+  customWelcome: "Welcome to Plauti Chat (beta)!"
+  endpointsMenu: true
+  modelSelect: true
+  parameters: true
+  sidePanel: true
+  presets: true
+  prompts: true
+  bookmarks: true
+  multiConvo: false
+  agents: true
+  runCode: false
+
+endpoints:
+  azureOpenAI:
+    plugins: false
+    assistants: false
+    summarize: true
+    titleConvo: true
+    titleModel: "gpt-4o"
+    groups:
+      - group: "azure-group"
+        apiKey: "EWK62XJus5jmvLx6bIbYtWwAaBLdVJUwXaWxvq1NjI8KCk6jFiqVJQQJ99BDACfhMk5XJ3w3AAAAACOGejZu"
+        instanceName: "ai-plautigpt811322255842"
+        version: "2024-04-01-preview"
+        assistants: false
+        plugins: false
+        models:
+          gpt-4o:
+            deploymentName: "gpt-4o"
+          o3-mini:
+            deploymentName: "o3-mini"
+            version: "2024-12-01-preview"
+          gpt-4.1:
+            deploymentName: 'gpt-4.1'
+            version: '2024-12-01-preview'
+      - group: 'azure-inference'
+        apiKey: 'EWK62XJus5jmvLx6bIbYtWwAaBLdVJUwXaWxvq1NjI8KCk6jFiqVJQQJ99BDACfhMk5XJ3w3AAAAACOGejZu'
+        instanceName: 'ai-plautigpt811322255842'
+        version: '2024-05-01-preview'
+        assistants: false
+        plugins: false
+        serverless: true
+        baseURL: 'https://ai-plautigpt811322255842.services.ai.azure.com/models'
+        models:
+          MAI-DS-R1:
+            deploymentName: 'MAI-DS-R1'
+            version: '1'
+  
+  agents:
+    recursionLimit: 50
+    maxRecursionLimit: 100
+    disableBuilder: false
+    capabilities:
+      - "file_search"
+      - "tools"
+      - "chain"
+      - "artifacts"
