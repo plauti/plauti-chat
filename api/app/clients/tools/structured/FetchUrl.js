@@ -56,7 +56,7 @@ class FetchUrl extends Tool {
 			const ct = cheerio.load(html);
 
 			// Get text content and compact whitespace
-			return ct.text().replace(/\s\s+/g, '\n').trim().slice(0,30000);
+			return ct('body').text().replace(/\s\s+/g, '\n').trim().slice(0,30000);
 		}
 		catch (e) {
 			return `Error: ${e.message}`;
