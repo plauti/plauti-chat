@@ -192,5 +192,14 @@
         "description": "Provide your Flux API key from your user profile."
       }
     ]
+  },
+  {
+    "name": "Fetch Url",
+    "pluginKey": "fetchurl",
+    "description": "Use Fetch Url to get the content of any webpage.",
+    "icon": "https://i.imgur.com/SMmVkNB.png",
+    "authConfig": [
+      
+    ]
   }
 ]

@@ -46,7 +46,7 @@ class GoogleSearchResults extends Tool {
       throw new Error(`Validation failed: ${JSON.stringify(validationResult.error.issues)}`);
     }
 
-    const { query, max_results = 5 } = validationResult.data;
+    const { query, max_results = 10 } = validationResult.data;
 
     const response = await fetch(
       `https://www.googleapis.com/customsearch/v1?key=${this.apiKey}&cx=${
