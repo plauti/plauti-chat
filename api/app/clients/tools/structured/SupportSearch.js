@@ -47,12 +47,12 @@ class PlautiSupportSearch extends Tool {
       const data = await response.json();
 
       // Process and return results
-      if (data.length === 0) {
+      if (data.meta.total_count === 0) {
         return "No matching articles found.";
       }
 
       // Return a list of titles and links
-      return data.map(article => `${article.title}: ${article.url}`).join('\n');
+      return data.searches;
     } catch (error) {
       return `Error: ${error.message}`;
     }
