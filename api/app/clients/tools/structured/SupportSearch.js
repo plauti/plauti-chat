@@ -36,12 +36,12 @@ class PlautiSupportSearch extends Tool {
       const response = await fetch(`${this.baseUrl}/api/v3/search?query=${encodeURIComponent(query)}`, {
         headers: {
           'Content-Type': 'application/json',
-          'api_key': this.apiKey,
+          'Authorization': this.apiKey,
         },
       });
 
       if (!response.ok) {
-        throw new Error(`Error fetching Plauti Support data: ${response.status} + ${this.baseUrl} + ${this.apiKey}`);
+        throw new Error(`Error fetching Plauti Support data: ${response.status}`);
       }
 
       const data = await response.json();

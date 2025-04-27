@@ -45,14 +45,18 @@ class FetchUrl extends Tool {
 		try {
 			// Validate URL
 			if (!this.isValidUrl(url)) {
-				throw new Error("Invalid or unsafe URL string -- " + url);
+				throw new Error("Invalid or unsafe URL string -- ");
 			}
 			// Use fetch (Node 18+)
 			const response = await fetch(url);
 			if (!response.ok) throw new Error(`Could not fetch url: ${response.status}`);
 			const html = await response.text();
-			const markdown = turndownService.turndown(html);
-			return markdown.slice(0, 3000); // Optional: limit output size for LLMs
+			
+			// Parse HTML input
+			const ct = cheerio.load(input);
+
+			// Get text content and compact whitespace
+			return ct.text().replace(/\s\s+/g, "\n").trim().slice(0,30000);
 		}
 		catch (e) {
 			return `Error: ${e.message}`;
