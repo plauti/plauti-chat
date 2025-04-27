@@ -19,6 +19,7 @@ const {
   createYouTubeTools,
   TavilySearchResults,
   createOpenAIImageTools,
+  FetchUrl,
 } = require('../');
 const { primeFiles: primeCodeFiles } = require('~/server/services/Files/Code/process');
 const { createFileSearchTool, primeFiles: primeSearchFiles } = require('./fileSearch');
@@ -149,6 +150,7 @@ const loadTools = async ({
     flux: FluxAPI,
     calculator: Calculator,
     google: GoogleSearchAPI,
+    fetchurl: FetchUrl,
     open_weather: OpenWeather,
     wolfram: StructuredWolfram,
     'stable-diffusion': StructuredSD,
