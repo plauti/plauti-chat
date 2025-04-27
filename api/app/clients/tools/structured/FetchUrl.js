@@ -1,7 +1,7 @@
 const { Tool } = require('@langchain/core/tools');
 const TurndownService = require('turndown');
 const { z } = require('zod');
-const turndownService = new TurndownService();
+const cheerio = require('cheerio');
 class FetchUrl extends Tool {
 	static lc_name() {
 		return 'fetchurl';
@@ -56,7 +56,7 @@ class FetchUrl extends Tool {
 			const ct = cheerio.load(input);
 
 			// Get text content and compact whitespace
-			return ct.text().replace(/\s\s+/g, "\n").trim().slice(0,30000);
+			return ct.text().replace(/\s\s+/g, '\n').trim().slice(0,30000);
 		}
 		catch (e) {
 			return `Error: ${e.message}`;
